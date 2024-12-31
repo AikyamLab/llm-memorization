@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "llm_memorization"
+version = "0.1.0"
+description = ""
+authors = ["Tarun Menta <menta.tarun@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+lm-eval = {git = "https://github.com/EleutherAI/lm-evaluation-harness.git"}
+transformers = "^4.47.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
