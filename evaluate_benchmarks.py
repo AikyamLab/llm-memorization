@@ -7,7 +7,7 @@ import numpy as np
 import pickle as pkl
 
 def main(args):
-    model, tokenizer = get_model_tokenizer(args.model_path)
+    model, tokenizer = get_model_tokenizer(args.model_path, args.device)
     model_name = args.model_path.replace('/','_')
 
     #Running baseline scores
@@ -49,6 +49,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch-size', type=str, default="auto:4")
     parser.add_argument('--num-layers', type=int, default=24)
     parser.add_argument('--out-dir', type=str, default='./benchmark_scores')
+    parser.add_argument('--device', type=str, default='cuda')
     args = parser.parse_args()
 
     main(args)

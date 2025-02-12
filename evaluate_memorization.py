@@ -10,7 +10,7 @@ from llm_memorization.models import get_model_tokenizer
 from llm_memorization.metrics import exact_match, token_accuracy, completion_entropy
 
 def main(args):
-    model, tokenizer = get_model_tokenizer(args.model_path)
+    model, tokenizer = get_model_tokenizer(args.model_path, args.device)
     memorization_dataset = np.load(args.dataset_path).astype(np.int32)
     total_len = memorization_dataset.shape[1]
 
@@ -32,7 +32,7 @@ def main(args):
     with torch.no_grad():
         for batch_idx in tqdm(range(num_batches)):
             tokens = memorization_dataset[batch_idx*args.batch_size:(batch_idx+1)*args.batch_size]
-            full_seq = torch.tensor(tokens).cuda()
+            full_seq = torch.tensor(tokens).to(args.device)
             prompts = full_seq[:, :args.prefix_len]
             suffixes = full_seq[:, args.prefix_len:]
             
@@ -64,7 +64,7 @@ def main(args):
         with torch.no_grad():
             for batch_idx in tqdm(range(num_batches)):
                 tokens = memorization_dataset[batch_idx*args.batch_size:(batch_idx+1)*args.batch_size]
-                full_seq = torch.tensor(tokens).cuda()
+                full_seq = torch.tensor(tokens).to(args.device)
                 prompts = full_seq[:, :args.prefix_len]
                 suffixes = full_seq[:, args.prefix_len:]
 
@@ -90,6 +90,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch-size', type=int, default=64)
     parser.add_argument('--num-layers', type=int, default=24)
     parser.add_argument('--out-dir', type=str, default='./memorization_scores')
+    parser.add_argument('--device', type=str, default='cuda')
     args = parser.parse_args()
 
     main(args)
