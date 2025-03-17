@@ -49,8 +49,8 @@ We welcome contributions to enhance our work! If you have suggestions or find is
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Acknowledgments
-This work would not be possible without the awesome [GPTNeo]() and [Pythia]() models, from [EleutherAI](). The availability of training data is what enables a study of memorization of training data in our work. 
-All our benchamrking was run using [LM Evaluation Harness](), which enabled us to have a stable evaluation environment.
+This work would not be possible without the awesome [GPTNeo](https://github.com/EleutherAI/gpt-neo) and [Pythia](https://github.com/EleutherAI/pythia) models, from [EleutherAI](https://www.eleuther.ai/). The fully open-source nature of these models, including the availability of training data is crucial in enabling the study of memorization of training data in our work. 
+All our benchamrking was run using [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) (from EleutherAI again!), which enabled us to have a stable evaluation environment.
 
 ## Citation
 ```
