@@ -25,7 +25,7 @@ Our experiments consist of two steps -
 - Computing benchmark scores when short-circuiting each attention block of the LLM
 
 ### Computing Memorization Scores
-Run the following command. The data must be a 2D numpy array where each row is a memorized sample, already tokenized using the model's corresponding tokenizer. The prefix length can be set as shown below. 
+Run the following command. The data must be a 2D numpy array where each row is a memorized sample, already tokenized using the model's corresponding tokenizer (See [this file](memorized_data/EleutherAI_gpt-neo-1.3B.npy) for an example). The prefix length can be set as shown below. 
 ```python
 python evaluate_memorization.py  --model-path PATH_TO_HUGGINGFACE_MODEL \
                               --num-layers NUMBER_OF_TRANSFORMER_LAYERS \
