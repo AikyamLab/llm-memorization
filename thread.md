@@ -16,7 +16,6 @@
 ![model-scale.png](assets/model-scale.png)
 
 7/8 Short-circuiting early layers caused complete model collapse, confirming these are essential for semantic processing. Interestingly, models showed almost zero performance drop on reasoning tasks when certain later blocks were modified - these blocks contribute almost exclusively to memorization! 
-[Suggest including Figure 6: Shows relative decrease in performance between reasoning and language tasks]
 ![reasoning-non-reasoning.png](assets/reasoning-non-reasoning.png)
 
 8/8 Real-world impact: Our findings offer a practical approach to develop LLMs that maintain reasoning abilities while significantly reducing privacy and copyright risks. This creates a path toward more trustworthy AI deployment in sensitive domains like healthcare, legal services, and enterprise applications. Full paper: https://github.com/AikyamLab/llm-memorization
